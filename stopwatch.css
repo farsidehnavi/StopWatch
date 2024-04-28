@@ -63,6 +63,7 @@ body {
     grid-template-columns: 80px 150px 60px;
     font-size: 20px;
     align-items: center;
+    cursor: default;
 }
 .pundertext {
     margin: 0;
@@ -88,6 +89,7 @@ body {
     font-weight: 500;
     font-size: 13.5px;
     margin-top: 20px;
+    cursor: default;
 }
 .hr {
     margin: 0;
@@ -103,7 +105,7 @@ body {
     font-family: Arial;
     font-weight: 500;
     font-size: 13.5px;
-    margin-top: 274.1px;
+    margin-top: 333px;
 }
 .laps {
     display: grid;

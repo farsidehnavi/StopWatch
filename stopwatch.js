@@ -1,3 +1,7 @@
+function getKeyByValue(object, value) {
+    return Object.keys(object).find(key =>
+        object[key] === value);
+}
 document.querySelector('.ptimer').innerHTML=localStorage.getItem('time')||`<samp class="hour">00</samp>:<samp class="min">00</samp>:<samp class="sec">00</samp>.<samp class="milisec">00</samp>`
 OnclickStartup()
 function OnclickStartup(){
@@ -79,10 +83,10 @@ function Reset(){
     localStorage.setItem('time',document.querySelector('.ptimer').innerHTML)
     document.querySelector('.bthird').classList.remove('bthird-started')
     document.querySelector('.flag').innerHTML=''
-    // q=0
     if(document.querySelector('.bfirst').title=='Pouse'){
         End()
     }
+    // q=0
 }
 let q=0
 let last={
@@ -99,15 +103,16 @@ function Mark(){
         </div>
         <p class="time">${TimeCalculator()}</p>
         <p class="total">${document.querySelector('.ptimer').innerText}</p>`+document.querySelector('.flag').innerHTML
-        // last.hour=document.querySelector('.hour').innerText
-        // last.minute=document.querySelector('.min').innerText
-        // last.second=document.querySelector('.sec').innerText
-        // last.milisecond=document.querySelector('.milisec').innerText
-        // isFastest(()=>{Math.min()},'Fastest')
-        // isFastest(()=>{Math.max()},'Slowest')
-        // isFastest()
+        last.hour=document.querySelector('.hour').innerText
+        last.minute=document.querySelector('.min').innerText
+        last.second=document.querySelector('.sec').innerText
+        last.milisecond=document.querySelector('.milisec').innerText
         q++
-        console.log(document.querySelector('.flag').innerHTML)
+        if(q!=1){
+            isFastest('Fastest')
+            isFastest('Slowest')
+            console.log('done!')
+        }
     }
 }
 let timeHard=[]
@@ -148,24 +153,13 @@ function TimeCalculator(){
         return `${last[4]}:${last[3]}:${last[2]}.${last[1]}`
     }
 }
-// function isFastest(f,o){
-//     if(o=='Fastest'){
-//         document.querySelectorAll('.isFastest').innerText=null
-//     }
-//     console.log(timeHard)
-//     ind=0
-//     while(1){
-//         if(timeHard[ind]==f(...timeHard)){break}
-//         ind++
-//     }
-//     ind--
-//     document.querySelector('.isFastest'+ind).innerText=o
-// }
-// function isFastest(){
-//     ind=0
-//     while(1){
-//         if(timeHard[ind]==Math.min(...timeHard)){break}
-//         ind++
-//     }
-//     document.querySelector('.isFastest'+ind).innerText='Fastest'
-// }
+function isFastest(o){
+    if(o=='Fastest'){
+        const a=document.querySelectorAll('.isFastest')
+        a.forEach(v=>{v.innerText=null})
+        document.querySelector('.isFastest'+getKeyByValue(timeHard,Math.min(...timeHard))).innerText=o
+    }
+    else{
+        document.querySelector('.isFastest'+getKeyByValue(timeHard,Math.max(...timeHard))).innerText=o
+    }
+}
