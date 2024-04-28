@@ -1,0 +1,111 @@
+body {
+    background-color: rgb(50, 50, 50);
+    color: rgb(206, 206, 206);
+    font-size: 80px;
+    margin: 15px;
+    font-family: Arial;
+}
+.body-started{
+    color: white;
+}
+.main {
+    margin-top: 50px;
+    position: fixed;
+    top: 0;
+    background-color: rgb(50, 50, 50);
+}
+.milisec {
+    font-size: 55px;
+}
+.ptimer {
+    margin: 0;
+}
+.photo {
+    height: 20px;
+    width: 20px;
+}
+.play {
+    mix-blend-mode: multiply;
+    height: 15px;
+}
+.reset {
+    height: 20px;
+    width: 20px;
+}
+.bfirst {
+    border-radius: 50px;
+    background-color: rgb(135, 207, 255);
+    padding: 18.2px 18.1px 16.2px 20.5px;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.bsecond {
+    background-color: rgb(50, 50, 50);
+    border-radius: 50px;
+    padding: 5px 15px 0 15px;
+    border: solid 2px gray;
+    opacity: 0.5;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.bthird {
+    background-color: rgb(50, 50, 50);
+    border-radius: 50px;
+    border: solid 2px gray;
+    padding: 0 15px;
+    opacity: 0.5;
+    cursor: pointer;
+    width: 52.81px;
+}
+.dundertext {
+    display: grid;
+    grid-template-columns: 80px 150px 60px;
+    font-size: 20px;
+    align-items: center;
+}
+.pundertext {
+    margin: 0;
+    justify-self: center;
+}
+.dbuttons {
+    display: flex;
+    margin-left: 120px;
+    margin-top: 40px;
+}
+.bsecond-started {
+    opacity: 1;
+}
+.bthird-started {
+    opacity: 1;
+}
+.dflaglist-toppic {
+    display: grid;
+    grid-template-columns: 136px 163px 150px;
+    color: white;
+    margin-left: 3px;
+    font-family: Arial;
+    font-weight: 500;
+    font-size: 13.5px;
+    margin-top: 20px;
+}
+.hr {
+    margin: 0;
+    background-color: rgb(92, 92, 92);
+    border: none;
+    height: 1.5px;
+}
+.flag {
+    display: grid;
+    grid-template-columns: 136px 163px 150px;
+    color: white;
+    margin-left: 3px;
+    font-family: Arial;
+    font-weight: 500;
+    font-size: 13.5px;
+    margin-top: 274.1px;
+}
+.laps {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+}
