@@ -1,7 +1,7 @@
 body {
     background-color: rgb(50, 50, 50);
     color: rgb(206, 206, 206);
-    font-size: 80px;
+    font-size: 65px;
     margin: 15px;
     font-family: Arial;
 }
@@ -15,7 +15,7 @@ body {
     background-color: rgb(50, 50, 50);
 }
 .milisec {
-    font-size: 55px;
+    font-size: 45px;
 }
 .ptimer {
     margin: 0;
@@ -60,7 +60,7 @@ body {
 }
 .dundertext {
     display: grid;
-    grid-template-columns: 80px 150px 60px;
+    grid-template-columns: 70px 110px 64px;
     font-size: 20px;
     align-items: center;
     cursor: default;
@@ -71,7 +71,7 @@ body {
 }
 .dbuttons {
     display: flex;
-    margin-left: 120px;
+    margin-left: 55px;
     margin-top: 40px;
 }
 .bsecond-started {
@@ -80,34 +80,47 @@ body {
 .bthird-started {
     opacity: 1;
 }
-.dflaglist-toppic {
+.dflaglist-toppic,.flag {
+    cursor: default;
     display: grid;
-    grid-template-columns: 136px 163px 150px;
+    grid-template-columns: 120px 120px 120px;
+    /* grid-template-columns: 136px 163px 150px; */
     color: white;
     margin-left: 3px;
     font-family: Arial;
     font-weight: 500;
     font-size: 13.5px;
+}
+.dflaglist-toppic {
     margin-top: 20px;
-    cursor: default;
 }
 .hr {
     margin: 0;
     background-color: rgb(92, 92, 92);
     border: none;
     height: 1.5px;
+    width: 327px;
 }
 .flag {
-    display: grid;
-    grid-template-columns: 136px 163px 150px;
-    color: white;
-    margin-left: 3px;
-    font-family: Arial;
-    font-weight: 500;
-    font-size: 13.5px;
-    margin-top: 333px;
+    margin-top: 305px;
 }
 .laps {
     display: grid;
     grid-template-columns: 30px 1fr;
 }
+.dupper-button {
+    display: grid;
+    grid-template-columns: 15px 15px;
+    grid-template-rows: 15px;
+    margin-left: 272px;
+    grid-column-gap: 20px;
+}
+.bupper-button {
+    background-color: rgb(50, 50, 50);
+    border: none;
+}
+/* .imode,.expand-img {
+    height: 15px;
+    width: 15px;
+    mix-blend-mode: multiply;
+} */

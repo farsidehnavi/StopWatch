@@ -2,12 +2,14 @@ function getKeyByValue(object, value) {
     return Object.keys(object).find(key =>
         object[key] === value);
 }
-document.querySelector('.ptimer').innerHTML=localStorage.getItem('time')||`<samp class="hour">00</samp>:<samp class="min">00</samp>:<samp class="sec">00</samp>.<samp class="milisec">00</samp>`
+document.querySelector('.ptimer').innerHTML=localStorage.getItem('time')||`<span class="hour">00</span><span class="hour-colon">:</span><span class="min">00</span>:<span class="sec">00</span>.<span class="milisec">00</span>`
+Desiner()
 OnclickStartup()
 function OnclickStartup(){
     document.querySelector('.bfirst').addEventListener('click',()=>{Power()})
     document.querySelector('.bsecond').addEventListener('click',()=>{Mark()})
     document.querySelector('.bthird').addEventListener('click',()=>{Reset()})
+    document.querySelector('body').onresize=()=>{Desiner()}
 }
 let i=0
 function Start(){
@@ -79,14 +81,16 @@ function Timer(){
     localStorage.setItem('time',document.querySelector('.ptimer').innerHTML)
 }
 function Reset(){
-    document.querySelector('.ptimer').innerHTML=`<samp class="hour">00</samp>:<samp class="min">00</samp>:<samp class="sec">00</samp>.<samp class="milisec">00</samp>`
+    document.querySelector('.ptimer').innerHTML=`<span class="hour">00</span><span class="hour-colon">:</span><span class="min">00</span>:<span class="sec">00</span>.<span class="milisec">00</span>`
     localStorage.setItem('time',document.querySelector('.ptimer').innerHTML)
     document.querySelector('.bthird').classList.remove('bthird-started')
     document.querySelector('.flag').innerHTML=''
     if(document.querySelector('.bfirst').title=='Pouse'){
         End()
     }
-    // q=0
+    document.querySelector('.dflaglist-toppic').innerHTML=null
+    q=0
+    timeHard=[]
 }
 let q=0
 let last={
@@ -97,6 +101,9 @@ let last={
 }
 function Mark(){
     if(document.querySelector('.bfirst').title=='Pouse'){
+        if(q==0){
+            document.querySelector('.dflaglist-toppic').innerHTML=`<p>Laps</p><p>Time</p><p>Total</p><hr class="hr">`
+        }
         document.querySelector('.flag').innerHTML=`<div class="laps">
         <p class="count">${q+1}</p>
         <p class="isFastest${q} isFastest"></p>
@@ -111,7 +118,6 @@ function Mark(){
         if(q!=1){
             isFastest('Fastest')
             isFastest('Slowest')
-            console.log('done!')
         }
     }
 }
@@ -162,4 +168,19 @@ function isFastest(o){
     else{
         document.querySelector('.isFastest'+getKeyByValue(timeHard,Math.max(...timeHard))).innerText=o
     }
+}
+function Desiner(){
+    // if(document.querySelector('body').clientWidth<330){
+    //     h=document.querySelector('.hour').innerText
+    //     document.querySelector('.hour-colon').innerText=null
+    //     document.querySelector('.hour').innerText=null
+    //     document.querySelector('.under-hour').innerText=null
+    // }
+    // else{
+    //     if(!document.querySelector('.hour').innerText){
+    //         document.querySelector('.hour').innerText=h||'00'
+    //         document.querySelector('.hour-colon').innerText=':'
+    //         document.querySelector('.under-hour').innerText='hr'
+    //     }
+    // }
 }
