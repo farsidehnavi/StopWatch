@@ -2,131 +2,46 @@ function getKeyByValue(object, value) {
     return Object.keys(object).find(key =>
         object[key] === value);
 }
-document.querySelector('.ptimer').innerHTML=localStorage.getItem('time')||`<span class="hour">00</span><span class="hour-colon">:</span><span class="min">00</span>:<span class="sec">00</span>.<span class="milisec">00</span>`
+document.querySelector('.ptimer').innerHTML=localStorage.getItem('time')||`<span class="min">00</span>:<span class="sec">00</span>.<span class="milisec">00</span>`
 Desiner()
 OnclickStartup()
-// NightMode()
-// setTimeout(()=>{NightMode()},1000)
 function OnclickStartup(){
     document.querySelector('.bfirst').addEventListener('click',()=>{Power()})
-    document.querySelector('.bsecond').addEventListener('click',()=>{Mark()})
-    document.querySelector('.bthird').addEventListener('click',()=>{Reset()})
-    document.querySelector('.bmode').addEventListener('click',()=>{NightMode()})
-    document.querySelector('.bexpand').addEventListener('click',()=>{Expand()})
+    document.querySelector('.bsecond').addEventListener('click',()=>{SecondButtonSwitch()})
     document.querySelector('body').onresize=()=>{Desiner()}
-}
-function NightMode(){
-    if(document.querySelector('.bmode').title=='Night Mode'){
-        document.body.classList.remove('body-day')
-        document.querySelector('.imode').src="icons/iconfider-daymode-white.png"
-        document.querySelector('.main').classList.remove('main-day')
-        document.querySelector('.reset').src='icons/reset-white.png'
-        document.querySelector('.photo').src='icons/flag-white.png'
-        document.querySelector('.bmode').title='Day Mode'
-    }
-    else {
-        document.body.classList.add('body-day')
-        document.querySelector('.imode').src="icons/iconfinder-nightmode.png"
-        document.querySelector('.main').classList.add('main-day')
-        document.querySelector('.reset').src='icons/reset-black.png'
-        document.querySelector('.photo').src='icons/flag-black.png'
-        document.querySelector('.bmode').title='Night Mode'
-    }
-    CollapseDesiner()
-}
-function Expand(){
-    if(CollapseDesiner(false)<3){
-        document.querySelector('.dflaglist-toppic').classList.add('dflaglist-toppic-hide')
-        document.querySelector('.flag').classList.add('flag-hide')
-        document.querySelector('.main').classList.add('main-down')
-        document.querySelector('.bexpand').title='Collapse'
-        }
-    else {
-        document.querySelector('.dflaglist-toppic').classList.remove('dflaglist-toppic-hide')
-        document.querySelector('.flag').classList.remove('flag-hide')
-        document.querySelector('.main').classList.remove('main-down')
-        document.querySelector('.bexpand').title='Expand'
-    }
-    CollapseDesiner()
-}
-function CollapseDesiner(Mode=true){
-    // expand-black 1
-    // expand-white 2
-    // collapse-black 3
-    // collapse-white 4
-    // change-situation true
-    // return-situation false
-    if(document.querySelector('.bexpand').title=='Expand'){
-        if(document.querySelector('.bmode').title=='Day Mode'){
-            if(Mode){
-                document.querySelector('.expand-img').src='icons/2.png'
-            }
-            else {
-                return 2
-            }
-        }
-        else {
-            if(Mode){
-                document.querySelector('.expand-img').src='icons/1.png'
-            }
-            else {
-                return 1
-            }
-        }
-    }
-    else {
-        if(document.querySelector('.bmode').title=='Day Mode'){
-            if(Mode){
-                document.querySelector('.expand-img').src='icons/4.png'
-            }
-            else {
-                return 4
-            }
-        }
-        else {
-            if(Mode){
-                document.querySelector('.expand-img').src='icons/3.png'
-            }
-            else {
-                return 3
-            }
-        }
-    }
 }
 let i=0
 function Start(){
     setInterval(()=>{Timer()},1)
-    document.querySelector('.bfirst').title='Pouse'
-    document.querySelector('.play').src="icons/pouse.png"
-    document.querySelector('body').classList.add('body-started')
-    document.querySelector('.bsecond').classList.add('bsecond-started')
-    document.querySelector('.bsecond').title='Laps / Splits'
-    document.querySelector('.bthird').classList.add('bthird-started')
+    document.querySelector('.bsecond').classList.remove('bsecond-blur')
+    document.querySelector('.bsecond').innerText='Lap'
+    document.querySelector('.bfirst').innerText='Stop'
+    document.querySelector('.bfirst').classList.add('bfirst-stop')
     i++
 }
 function End(){
     clearInterval(i)
-        document.querySelector('.bfirst').title='Start'
-        document.querySelector('.play').src="icons/play.png"
-        document.querySelector('body').classList.remove('body-started')
-        document.querySelector('.bsecond').classList.remove('bsecond-started')
+        document.querySelector('.bsecond').classList.remove('bsecond-blur')
+        document.querySelector('.bsecond').innerText='Reset'
+        document.querySelector('.bfirst').innerText='Start'
+        document.querySelector('.bfirst').classList.remove('bfirst-stop')
 }
 function Power(){
-    if(document.querySelector('.bfirst').title=='Start'){
+    if(document.querySelector('.bfirst').innerText=='Start'){
         Start()
     }
     else{
         End()
     }
 }
-// function SecondButtonSwitch(){
-//     if(document.querySelector('.bsecond').innerText=='Reset'){
-//         Reset()
-//     }
-//     else{
-//         Mark()
-//     }
-// }
+function SecondButtonSwitch(){
+    if(document.querySelector('.bsecond').innerText=='Reset'){
+        Reset()
+    }
+    else{
+        Mark()
+    }
+}
 function Timer(){
     if(document.querySelector('.milisec').innerText==99){
         if(document.querySelector('.sec').innerText==59){
@@ -163,9 +78,10 @@ function Timer(){
     localStorage.setItem('time',document.querySelector('.ptimer').innerHTML)
 }
 function Reset(){
-    document.querySelector('.ptimer').innerHTML=`<span class="hour">00</span><span class="hour-colon">:</span><span class="min">00</span>:<span class="sec">00</span>.<span class="milisec">00</span>`
+    document.querySelector('.ptimer').innerHTML=`<span class="min">00</span>:<span class="sec">00</span>.<span class="milisec">00</span>`
     localStorage.setItem('time',document.querySelector('.ptimer').innerHTML)
-    document.querySelector('.bthird').classList.remove('bthird-started')
+    document.querySelector('.bsecond').innerText='Lap'
+    document.querySelector('.bsecond').classList.add('bsecond-blur')
     document.querySelector('.flag').innerHTML=''
     if(document.querySelector('.bfirst').title=='Pouse'){
         End()
