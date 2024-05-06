@@ -107,12 +107,16 @@ body {
     font-family: Arial;
     font-weight: 500;
     font-size: 13.5px;
+    transition: opacity 0.5s;
 }
 .dflaglist-toppic {
     margin-top: 20px;
 }
 .dflaglist-toppic-hide {
     opacity: 0;
+}
+.dflaglist-toppic-day {
+    color: black;
 }
 .hr {
     margin: 0;
@@ -121,11 +125,17 @@ body {
     height: 1.5px;
     width: 327px;
 }
+.hr-day {
+    color: black;
+}
 .flag {
-    margin-top: 320px;
+    margin-top: 330px;
 }
 .flag-hide {
     opacity: 0;
+}
+.flag-day {
+    color: black;
 }
 .laps {
     display: grid;

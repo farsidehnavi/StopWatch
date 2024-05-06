@@ -32,7 +32,7 @@ body {
     font-weight: 500;
 }
 .bfirst {
-    background-color: rgb(112, 136, 112);
+    background-color: rgb(176, 195, 176);
     justify-self: left;
 }
 .bsecond {
@@ -47,17 +47,18 @@ body {
     margin-left: 3px;
     font-family: Arial;
     font-weight: 500;
-    font-size: 12px;
     margin-left: 20px;
+    color: rgb(178, 175, 197);
 }
 .dflaglist-toppic {
+    font-size: 12px;
     margin-top: 20px;
 }
 .hr {
     margin: 0;
     background-color: rgb(92, 92, 92);
     border: none;
-    height: 1.5px;
+    height: 0.5px;
     width: 200px;
     margin-left: 14px;
 }
@@ -66,4 +67,13 @@ body {
 }
 .bfirst-stop {
     background-color: red;
+}
+.flag {
+    font-size: 15.5px;
+}
+.l {
+    color: rgb(249, 126, 126);
+}
+.ot {
+    color: rgb(176, 195, 176);
 }

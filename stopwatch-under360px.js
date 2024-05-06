@@ -2,6 +2,14 @@ function getKeyByValue(object, value) {
     return Object.keys(object).find(key =>
         object[key] === value);
 }
+function AddSecondDigit(inp){
+    if(Number(inp)<10){
+        return '0'+String(inp)
+    }
+    else {
+        return inp
+    }
+}
 document.querySelector('.ptimer').innerHTML=localStorage.getItem('time')||`<span class="min">00</span>:<span class="sec">00</span>.<span class="milisec">00</span>`
 Desiner()
 OnclickStartup()
@@ -12,7 +20,7 @@ function OnclickStartup(){
 }
 let i=0
 function Start(){
-    setInterval(()=>{Timer()},1)
+    setInterval(()=>{Timer()},10)
     document.querySelector('.bsecond').classList.remove('bsecond-blur')
     document.querySelector('.bsecond').innerText='Lap'
     document.querySelector('.bfirst').innerText='Stop'
@@ -23,11 +31,11 @@ function End(){
     clearInterval(i)
         document.querySelector('.bsecond').classList.remove('bsecond-blur')
         document.querySelector('.bsecond').innerText='Reset'
-        document.querySelector('.bfirst').innerText='Start'
+        document.querySelector('.bfirst').innerText='Resume'
         document.querySelector('.bfirst').classList.remove('bfirst-stop')
 }
 function Power(){
-    if(document.querySelector('.bfirst').innerText=='Start'){
+    if(document.querySelector('.bfirst').innerText=='Start'||'Resume'){
         Start()
     }
     else{
@@ -40,6 +48,7 @@ function SecondButtonSwitch(){
     }
     else{
         Mark()
+        console.log('done')
     }
 }
 function Timer(){
@@ -86,7 +95,8 @@ function Reset(){
     if(document.querySelector('.bfirst').title=='Pouse'){
         End()
     }
-    document.querySelector('.dflaglist-toppic').innerHTML=null
+    document.querySelector('.header').innerHTML=null
+    document.querySelector('.bfirst').innerText='Start'
     q=0
     timeHard=[]
 }
@@ -98,16 +108,11 @@ let last={
     milisecond:'00'
 }
 function Mark(){
-    if(document.querySelector('.bfirst').title=='Pouse'){
+    if(document.querySelector('.bfirst').innerText=='Stop'){
         if(q==0){
-            document.querySelector('.dflaglist-toppic').innerHTML=`<p>Laps</p><p>Time</p><p>Total</p><hr class="hr">`
+            document.querySelector('.header').innerHTML=`<div class="dflaglist-toppic"><p>Lap</p><p>Lap times</p><p>Overall time</p></div><hr class="hr">`
         }
-        document.querySelector('.flag').innerHTML=`<div class="laps">
-        <p class="count">${q+1}</p>
-        <p class="isFastest${q} isFastest"></p>
-        </div>
-        <p class="time">${TimeCalculator()}</p>
-        <p class="total">${document.querySelector('.ptimer').innerText}</p>`+document.querySelector('.flag').innerHTML
+        document.querySelector('.flag').innerHTML=`<p class="l">${AddSecondDigit(q+1)}</p><p class="lt">00:04.17</p><p class="ot">${document.querySelector('.ptimer').innerText}</p>`+document.querySelector('.flag').innerHTML
         last.hour=document.querySelector('.hour').innerText
         last.minute=document.querySelector('.min').innerText
         last.second=document.querySelector('.sec').innerText
@@ -149,9 +154,7 @@ function TimeCalculator(){
         })
         a.push(4)
         a.forEach((v)=>{
-            if(Number(last[v])<10){
-                last[v]='0'+String(last[v])
-            }
+            last[v]=AddSecondDigit(last[v])
         })
         timeHard.push(Number(String(last[4])+String(last[3])+String(last[2])+String(last[1])))
         return `${last[4]}:${last[3]}:${last[2]}.${last[1]}`
