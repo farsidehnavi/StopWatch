@@ -1,0 +1,13 @@
+.body {
+    background-color: rgb(220, 220, 220);
+    color: rgb(100, 100, 100);
+}
+.body-started{
+    color: black;
+}
+.main {
+    background-color: rgb(220, 220, 220);
+}
+.hr {
+    background-color: rgb(220, 220, 220);
+}
