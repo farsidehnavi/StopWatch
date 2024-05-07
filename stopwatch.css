@@ -11,9 +11,6 @@ body {
     background-color: rgb(220, 220, 220);
     color: rgb(100, 100, 100);
 }
-.body-day.body-started {
-    color: black;
-}
 .body-started{
     color: white;
 }
@@ -37,17 +34,13 @@ body {
 .ptimer {
     margin: 0;
 }
-.photo {
+.photo,.reset {
     height: 20px;
     width: 20px;
 }
 .play {
     mix-blend-mode: multiply;
     height: 15px;
-}
-.reset {
-    height: 20px;
-    width: 20px;
 }
 .bfirst {
     border-radius: 50px;
@@ -87,14 +80,18 @@ body {
     justify-self: center;
 }
 .dbuttons {
-    display: flex;
-    margin-left: 55px;
+    display: grid;
+    grid-template-columns: 72.8px 72.8px 72.8px;
+    margin-left: 70.8px;
     margin-top: 40px;
+    transition: grid-template-columns 0.5s;
+    transition: margin-left 0.5s;
 }
-.bsecond-started {
-    opacity: 1;
+.dbuttons-expand {
+    grid-template-columns: 72.8px 0 72.8px;
+    margin-left: 107.2px;
 }
-.bthird-started {
+.bsecond-started,.bthird-started {
     opacity: 1;
 }
 .dflaglist-toppic,.flag {
@@ -112,12 +109,6 @@ body {
 .dflaglist-toppic {
     margin-top: 20px;
 }
-.dflaglist-toppic-hide {
-    opacity: 0;
-}
-.dflaglist-toppic-day {
-    color: black;
-}
 .hr {
     margin: 0;
     background-color: rgb(92, 92, 92);
@@ -125,13 +116,13 @@ body {
     height: 1.5px;
     width: 327px;
 }
-.hr-day {
+/* .hr-day {
     color: black;
-}
+} */
 .flag {
     margin-top: 330px;
 }
-.flag-hide {
+.flag-hide,.bsecond-hide,.dflaglist-toppic-hide {
     opacity: 0;
 }
 .flag-day {
@@ -158,4 +149,7 @@ body {
 .imode,.expand-img {
     height: 25px;
     width: 25px;
+}
+.body-day.body-started,.dflaglist-toppic-day {
+    color: black;
 }

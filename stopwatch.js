@@ -43,12 +43,16 @@ function Expand(){
         document.querySelector('.flag').classList.add('flag-hide')
         document.querySelector('.main').classList.add('main-down')
         document.querySelector('.bexpand').title='Collapse'
+        document.querySelector('.bsecond').classList.add('bsecond-hide')
+        document.querySelector('.dbuttons').classList.add('dbuttons-expand')
         }
     else {
         document.querySelector('.dflaglist-toppic').classList.remove('dflaglist-toppic-hide')
         document.querySelector('.flag').classList.remove('flag-hide')
         document.querySelector('.main').classList.remove('main-down')
         document.querySelector('.bexpand').title='Expand'
+        document.querySelector('.bsecond').classList.remove('bsecond-hide')
+        document.querySelector('.dbuttons').classList.remove('dbuttons-expand')
     }
     CollapseDesiner()
 }
