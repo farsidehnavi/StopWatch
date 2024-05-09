@@ -1,16 +1,3 @@
-function getKeyByValue(object, value) {
-    return Object.keys(object).find(key =>
-        object[key] === value);
-}
-function AddSecondDigit(inp){
-    if(Number(inp)<10){
-        return '0'+String(inp)
-    }
-    else {
-        return inp
-    }
-}
-document.querySelector('.ptimer').innerHTML=localStorage.getItem('time')||`<span class="min">00</span>:<span class="sec">00</span>.<span class="milisec">00</span>`
 Desiner()
 OnclickStartup()
 function OnclickStartup(){
@@ -20,22 +7,21 @@ function OnclickStartup(){
 }
 let i=0
 function Start(){
-    setInterval(()=>{Timer()},10)
-    document.querySelector('.bsecond').classList.remove('bsecond-blur')
+    setInterval(()=>{Timer(false)},10)
     document.querySelector('.bsecond').innerText='Lap'
     document.querySelector('.bfirst').innerText='Stop'
     document.querySelector('.bfirst').classList.add('bfirst-stop')
+    document.querySelector('.bsecond').classList.remove('bsecond-blur')
     i++
 }
 function End(){
     clearInterval(i)
-        document.querySelector('.bsecond').classList.remove('bsecond-blur')
-        document.querySelector('.bsecond').innerText='Reset'
-        document.querySelector('.bfirst').innerText='Resume'
-        document.querySelector('.bfirst').classList.remove('bfirst-stop')
+    document.querySelector('.bsecond').innerText='Reset'
+    document.querySelector('.bfirst').innerText='Resume'
+    document.querySelector('.bfirst').classList.remove('bfirst-stop')
 }
 function Power(){
-    if(document.querySelector('.bfirst').innerText=='Start'||'Resume'){
+    if(document.querySelector('.bfirst').innerText=='Start'||document.querySelector('.bfirst').innerText=='Resume'){
         Start()
     }
     else{
@@ -48,44 +34,9 @@ function SecondButtonSwitch(){
     }
     else{
         Mark()
-        console.log('done')
     }
 }
-function Timer(){
-    if(document.querySelector('.milisec').innerText==99){
-        if(document.querySelector('.sec').innerText==59){
-            if(document.querySelector('.min').innerText==59){
-                document.querySelector('.hour').innerText=Number(document.querySelector('.hour').innerText)+1
-                document.querySelector('.min').innerText='00'
-                document.querySelector('.sec').innerText='00'
-                if(document.querySelector('.hour').innerText<10){
-                    document.querySelector('.hour').innerText='0'+document.querySelector('.hour').innerText
-                }
-            }
-            else{
-                document.querySelector('.min').innerText=Number(document.querySelector('.min').innerText)+1
-                document.querySelector('.sec').innerText='00'
-                if(document.querySelector('.min').innerText<10){
-                    document.querySelector('.min').innerText='0'+document.querySelector('.min').innerText
-                }
-            }
-        }
-        else{
-            document.querySelector('.sec').innerText=Number(document.querySelector('.sec').innerText)+1
-            if(document.querySelector('.sec').innerText<10){
-                document.querySelector('.sec').innerText='0'+document.querySelector('.sec').innerText
-            }
-        }
-        document.querySelector('.milisec').innerText='00'
-    }
-    else{
-        document.querySelector('.milisec').innerText=Number(document.querySelector('.milisec').innerText)+1
-        if(document.querySelector('.milisec').innerText<10){
-            document.querySelector('.milisec').innerText='0'+document.querySelector('.milisec').innerText
-        }
-    }
-    localStorage.setItem('time',document.querySelector('.ptimer').innerHTML)
-}
+import { Timer } from "./stopwatch-functions-backend.js"
 function Reset(){
     document.querySelector('.ptimer').innerHTML=`<span class="min">00</span>:<span class="sec">00</span>.<span class="milisec">00</span>`
     localStorage.setItem('time',document.querySelector('.ptimer').innerHTML)

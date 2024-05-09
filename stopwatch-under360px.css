@@ -62,9 +62,6 @@ body {
     width: 200px;
     margin-left: 14px;
 }
-.bsecond-blur {
-    opacity: 0.5;
-}
 .bfirst-stop {
     background-color: red;
 }
@@ -76,4 +73,13 @@ body {
 }
 .ot {
     color: rgb(176, 195, 176);
+}
+.perror {
+    color: rgb(249, 126, 126);
+    font-size: small;
+    width: 200px;
+    margin-left: 20px;
+}
+.bsecond-blur {
+    opacity: 0.5;
 }

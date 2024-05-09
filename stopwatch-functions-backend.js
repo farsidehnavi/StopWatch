@@ -11,19 +11,30 @@ function AddSecondDigit(inp){
     }
 }
 // Errors :
-document.querySelector('.ptimer').innerHTML=localStorage.getItem('time')||`<span class="hour">00</span>:<span class="min">00</span>:<span class="sec">00</span>.<span class="milisec">00</span>`
+if (localStorage.getItem('time')){
+    document.querySelector('.ptimer').innerHTML=localStorage.getItem('time')
+}
 function AddbyOne(itm){
     document.querySelector('.'+itm).innerText=AddSecondDigit(Number(document.querySelector('.'+itm).innerText)+1)
 }
-export function Timer(){
+export function Timer(situation=true){
     if(document.querySelector('.milisec').innerText==99){
         if(document.querySelector('.sec').innerText==59){
-            if(document.querySelector('.min').innerText==59){
-                AddbyOne('hour')
-                document.querySelector('.min').innerText='00'
-                document.querySelector('.sec').innerText='00'
+            if(situation){
+                if(document.querySelector('.min').innerText==59){
+                    AddbyOne('hour')
+                    document.querySelector('.min').innerText='00'
+                    document.querySelector('.sec').innerText='00'
+                }
+                else{
+                    AddbyOne('min')
+                    document.querySelector('.sec').innerText='00'
+                }
             }
-            else{
+            else {
+                if(document.querySelector('.min').innerText==99){
+                    ResizeError(true)
+                }
                 AddbyOne('min')
                 document.querySelector('.sec').innerText='00'
             }
@@ -37,6 +48,14 @@ export function Timer(){
         AddbyOne('milisec')
     }
     localStorage.setItem('time',document.querySelector('.ptimer').innerHTML)
+}
+function ResizeError(situation=false){
+    if(situation){
+        document.querySelector('.perror').innerText=`We recomend you to resize this webpage to prevent deformation of the webpage if possible`
+    }
+    else{
+        document.querySelector('.perror').innerText=null
+    }
 }
 let isFirst=true
 let last={
@@ -101,4 +120,5 @@ export function isFastest(o){
 }
 export function Reset(){
     console.log(b,10)
+    ResizeError()
 }

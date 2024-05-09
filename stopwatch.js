@@ -1,5 +1,3 @@
-import { getKeyByValue } from "./stopwatch-functions-backend.js"
-
 Desiner()
 OnclickStartup()
 // NightMode()
@@ -104,7 +102,7 @@ let i=0
 function Start(){
     setInterval(()=>{Timer()},1)
     document.querySelector('.bfirst').title='Pouse'
-    document.querySelector('.play').src="icons/pouse.png"
+    document.querySelector('.play').src="icons/pouse-black.png"
     document.querySelector('body').classList.add('body-started')
     document.querySelector('.bsecond').classList.add('bsecond-started')
     document.querySelector('.bsecond').title='Laps / Splits'
@@ -114,7 +112,7 @@ function Start(){
 function End(){
     clearInterval(i)
         document.querySelector('.bfirst').title='Start'
-        document.querySelector('.play').src="icons/play.png"
+        document.querySelector('.play').src="icons/play-black.png"
         document.querySelector('body').classList.remove('body-started')
         document.querySelector('.bsecond').classList.remove('bsecond-started')
 }
