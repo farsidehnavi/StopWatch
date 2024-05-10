@@ -101,8 +101,8 @@ function CollapseDesiner(Mode=true){
 let i=0
 function Start(){
     setInterval(()=>{Timer()},1)
-    document.querySelector('.bfirst').title='Pouse'
-    document.querySelector('.play').src="icons/pouse-black.png"
+    document.querySelector('.bfirst').title='Pause'
+    document.querySelector('.play').src="icons/pause-black.png"
     document.querySelector('body').classList.add('body-started')
     document.querySelector('.bsecond').classList.add('bsecond-started')
     document.querySelector('.bsecond').title='Laps / Splits'
@@ -139,7 +139,7 @@ function ResetCaller(){
     localStorage.setItem('time',document.querySelector('.ptimer').innerHTML)
     document.querySelector('.bthird').classList.remove('bthird-started')
     document.querySelector('.flag').innerHTML=''
-    if(document.querySelector('.bfirst').title=='Pouse'){
+    if(document.querySelector('.bfirst').title=='Pause'){
         End()
     }
     document.querySelector('.dflaglist-toppic').innerHTML=null
@@ -150,7 +150,7 @@ import { Mark } from "./stopwatch-functions-backend.js"
 import { TimeCalculator } from "./stopwatch-functions-backend.js"
 let q=0
 function MarkCaller(){
-    if(document.querySelector('.bfirst').title=='Pouse'){
+    if(document.querySelector('.bfirst').title=='Pause'){
         if(q==0){
             document.querySelector('.dflaglist-toppic').innerHTML=`<p>Laps</p><p>Time</p><p>Total</p><hr class="hr">`
         }

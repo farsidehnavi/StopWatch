@@ -43,7 +43,7 @@ function Reset(){
     document.querySelector('.bsecond').innerText='Lap'
     document.querySelector('.bsecond').classList.add('bsecond-blur')
     document.querySelector('.flag').innerHTML=''
-    if(document.querySelector('.bfirst').title=='Pouse'){
+    if(document.querySelector('.bfirst').title=='Pause'){
         End()
     }
     document.querySelector('.header').innerHTML=null
