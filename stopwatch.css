@@ -15,18 +15,21 @@ body {
     color: white;
 }
 .main {
-    margin-top: 50px;
+    padding-top: 50px;
+    padding-left: 20px;
     position: fixed;
     top: 0;
+    left: 0;
     background-color: rgb(50, 50, 50);
     transition: background-color 0.5s;
-    transition: top 0.5s;
+    transition: padding 0.5s;
+    display: inline-block;
 }
 .main-day {
     background-color: rgb(220, 220, 220);
 }
 .main-down {
-    top: 50px;
+    padding-top: 100px;
 }
 .milisec {
     font-size: 45px;
@@ -99,7 +102,7 @@ body {
 .dflaglist-toppic,.flag {
     cursor: default;
     display: grid;
-    grid-template-columns: 120px 120px 120px;
+    grid-template-columns: 120px 120px 80px;
     /* grid-template-columns: 136px 163px 150px; */
     color: white;
     margin-left: 3px;
@@ -123,6 +126,8 @@ body {
 } */
 .flag {
     margin-top: 330px;
+    padding-left: 10px;
+    margin-right: 0;
 }
 .flag-hide,.bsecond-hide,.dflaglist-toppic-hide {
     opacity: 0;
@@ -151,6 +156,7 @@ body {
 .imode,.expand-img {
     height: 25px;
     width: 25px;
+    cursor: pointer;
 }
 .body-day.body-started,.dflaglist-toppic-day {
     color: black;

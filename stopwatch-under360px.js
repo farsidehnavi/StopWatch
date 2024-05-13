@@ -1,5 +1,7 @@
 Desiner()
 OnclickStartup()
+import { StorageRestore } from "./stopwatch-functions-backend.js"
+StorageRestore(false)
 function OnclickStartup(){
     document.querySelector('.bfirst').addEventListener('click',()=>{Power()})
     document.querySelector('.bsecond').addEventListener('click',()=>{SecondButtonSwitch()})

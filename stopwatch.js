@@ -1,5 +1,7 @@
 Desiner()
 OnclickStartup()
+// import { StorageRestore } from "./stopwatch-functions-backend.js"
+// StorageRestore()
 // NightMode()
 // setTimeout(()=>{NightMode()},1000)
 function OnclickStartup(){
@@ -100,7 +102,7 @@ function CollapseDesiner(Mode=true){
 }
 let i=0
 function Start(){
-    setInterval(()=>{Timer()},1)
+    setInterval(()=>{Timer()},10)
     document.querySelector('.bfirst').title='Pause'
     document.querySelector('.play').src="icons/pause-black.png"
     document.querySelector('body').classList.add('body-started')
@@ -178,18 +180,23 @@ function isFastestCaller(o){
     document.querySelector('.isFastest'+isFastest(o)).innerText=o
 }
 function Desiner(){
-    if(document.querySelector('body').clientWidth<330){
-        window.open('stopwatch-under360px.html')
-    //     h=document.querySelector('.hour').innerText
-    //     document.querySelector('.hour-colon').innerText=null
-    //     document.querySelector('.hour').innerText=null
-    //     document.querySelector('.under-hour').innerText=null
-    }
-    else{
-    //     if(!document.querySelector('.hour').innerText){
-    //         document.querySelector('.hour').innerText=h||'00'
-    //         document.querySelector('.hour-colon').innerText=':'
-    //         document.querySelector('.under-hour').innerText='hr'
-    //     }
-    }
+    // if(document.querySelector('body').clientWidth<330){
+    //     window.open('stopwatch-under360px.html')
+    // //     h=document.querySelector('.hour').innerText
+    // //     document.querySelector('.hour-colon').innerText=null
+    // //     document.querySelector('.hour').innerText=null
+    // //     document.querySelector('.under-hour').innerText=null
+    // }
+    // else{
+    // //     if(!document.querySelector('.hour').innerText){
+    // //         document.querySelector('.hour').innerText=h||'00'
+    // //         document.querySelector('.hour-colon').innerText=':'
+    // //         document.querySelector('.under-hour').innerText='hr'
+    // //     }
+    // }
+    // document.body.style.zoom=String(document.body.clientWidth/360*100)+'%'
+    // document.body.style.zoom='200%'
+    // if(document.querySelector('html').clientWidth<document.querySelector('html').clientHeight){
+    //     console.log('Using Phone!')
+    // }
 }
