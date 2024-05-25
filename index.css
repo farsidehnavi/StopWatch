@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+}
+.background-img {
+    height: 99.1vh;
+    width: 99.6vw;
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(6px);
+}
+.fp {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-size: 6vw;
+    position: fixed;
+    top: 0;
+    left: 20vw;
+    color: white;
+}
+.span {
+    color: #9c7859;
+}
+.sd {
+    position: fixed;
+    top: 40vh;
+    left: 20vw;
+    color: black;
+    font-family: Arial;
+    font-size: 1.5vw;
+    font-weight: 700;
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw;
+    grid-template-rows: 20vh;
+    align-items: center;
+    z-index: 2;
+}
+.sp {
+    justify-self: center;
+    
+}
+.td {
+    position: fixed;
+    top: 40vh;
+    left: 20vw;
+    font-size: 6vw;
+    color: white;
+    font-family: Arial;
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw;
+    grid-template-rows: 20vh;
+    align-items: center;
+}
+.tp {
+    margin: 0;
+    justify-self: center;
+}
+.pointer {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    position: fixed;
+    top: 65vh;
+    left: 20vw;
+    color: white;
+    font-size: 2vw;
+    margin: 10px 0;
+}
+button {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    position: fixed;
+    top: 65vh;
+    right: 25vw;
+    background-color: #9c7859;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 2vw;
+    border-radius: 8px;
+    cursor: pointer;
+}
+@media only screen and (max-width:250px) {
+    .sp {
+        opacity: 0;
+    }
+}

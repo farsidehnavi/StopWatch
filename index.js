@@ -1,9 +1,12 @@
-document.querySelector('.open').addEventListener('click',()=>{OpenStopWatch()})
-document.querySelector('.resize').addEventListener('click',()=>{ResizeStopWatch()})
-let stopwatch;
-function OpenStopWatch(){
-    stopwatch=window.open('stopwatch.html','','width=377, height=450')
+let a
+setInterval(()=>{TimeReloade()})
+function TimeReloade(){
+    a=Date().split(' ',5)[4].split(':')
+    document.querySelector('.hour').innerText=a[0]
+    document.querySelector('.minute').innerText=a[1]
+    document.querySelector('.second').innerText=a[2]
 }
-function ResizeStopWatch(){
-    stopwatch.resizeTo(394,750)
+document.querySelector('button').addEventListener('click',()=>{OpenStopWatch()})
+function OpenStopWatch(){
+    window.open('stopwatch.html','','width=377, height=450')
 }

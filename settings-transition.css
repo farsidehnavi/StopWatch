@@ -1,0 +1,6 @@
+.circle {
+    transition: background-color 0.5s,margin-left 2s;
+}
+.item {
+    transition: background-color 0.5s;
+}
