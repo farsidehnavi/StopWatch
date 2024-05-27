@@ -11,8 +11,10 @@ function AddSecondDigit(inp){
     }
 }
 // Errors :
-if (localStorage.getItem('time')){
+if (JSON.parse(localStorage.getItem('sett')).s){
+    if (localStorage.getItem('time')){
     document.querySelector('.ptimer').innerHTML=localStorage.getItem('time')
+    }
 }
 function AddbyOne(itm){
     document.querySelector('.'+itm).innerText=AddSecondDigit(Number(document.querySelector('.'+itm).innerText)+1)
@@ -47,7 +49,9 @@ export function Timer(situation=true){
     else{
         AddbyOne('milisec')
     }
-    localStorage.setItem('time',document.querySelector('.ptimer').innerHTML)
+    if (JSON.parse(localStorage.getItem('sett')).s){
+        localStorage.setItem('time',document.querySelector('.ptimer').innerHTML)
+    }
 }
 function ResizeError(situation=false){
     if(situation){

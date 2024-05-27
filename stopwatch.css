@@ -145,19 +145,84 @@ body {
     grid-template-rows: 15px;
     margin-left: 260px;
     margin-bottom: 10px;
-    grid-column-gap: 20px;
+    grid-column-gap: 25px;
 }
 .bupper-button {
     background-color: rgba(50, 50, 50, 0);
     border: none;
     height: 35px;
     width: 35px;
+    border-radius: 3px;
+    cursor: pointer;
 }
 .imode,.expand-img {
     height: 25px;
     width: 25px;
-    cursor: pointer;
 }
 .body-day.body-started,.dflaglist-toppic-day {
     color: black;
+}
+.upper-menu {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    display: grid;
+    grid-template-columns: 35px;
+    grid-template-rows: 35px 35px;
+    grid-row-gap: 5px;
+}
+.bsettings,.babout {
+    background-color: rgba(50, 50, 50, 0);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.pupper-menu {
+    font-size: 13px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: -60px;
+    transition: left 0.8s;
+}
+.pabout {
+    top: 40px;
+}
+.pupper-menu-light {
+    color: black;
+}
+.isettings {
+    height: 15px;
+    width: 15px;
+    margin: 5px;
+    transition: margin-left 0.5s;
+}
+.iabout {
+    height: 20px;
+    width: 20px;
+    margin: 2.5px;
+}
+.bsettings:hover,.babout:hover,.bupper-button:hover {
+    background-color: rgb(100, 100, 100);
+}
+.bupper-menu-light:hover,.bupper-button-light:hover {
+    background-color: rgb(175, 175, 175);
+}
+.bsettings:hover {
+    width: 130px;
+    .psettings {
+        left: 25px;
+    }
+    .isettings {
+        margin-left: 80px;
+    }
+}
+.babout:hover {
+    width: 130px;
+    .pabout {
+        left: 25px;
+    }
+    .iabout {
+        margin-left: 80px;
+    }
 }

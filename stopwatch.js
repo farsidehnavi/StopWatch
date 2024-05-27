@@ -10,7 +10,11 @@ function OnclickStartup(){
     document.querySelector('.bthird').addEventListener('click',()=>{ResetCaller()})
     document.querySelector('.bmode').addEventListener('click',()=>{NightMode()})
     document.querySelector('.bexpand').addEventListener('click',()=>{Expand()})
+    document.querySelector('.bsettings').addEventListener('click',()=>{OpenSettings()})
     document.querySelector('body').onresize=()=>{Desiner()}
+}
+function OpenSettings(){
+    window.open('settings.html','','width=340, height=225')
 }
 function NightMode(){
     if(document.querySelector('.bmode').title=='Night Mode'){
@@ -23,6 +27,11 @@ function NightMode(){
         document.querySelector('.dflaglist-toppic').classList.remove('dflaglist-toppic-day')
         document.querySelector('.flag').classList.remove('flag-day')
         // document.querySelector('.hr').classList.remove('hr-day')
+        document.querySelector('.isettings').src='icons/settings-white.png'
+        document.querySelector('.iabout').src='icons/about-white.png'
+        document.querySelectorAll('.pupper-menu').forEach(v=>v.classList.remove('pupper-menu-light'))
+        document.querySelectorAll('.bupper-menu').forEach(v=>v.classList.remove('bupper-menu-light'))
+        document.querySelectorAll('.bupper-button').forEach(v=>v.classList.remove('bupper-button-light'))
     }
     else {
         document.body.classList.add('body-day')
@@ -34,6 +43,11 @@ function NightMode(){
         document.querySelector('.dflaglist-toppic').classList.add('dflaglist-toppic-day')
         document.querySelector('.flag').classList.add('flag-day')
         // document.querySelector('.hr').classList.add('hr-day')
+        document.querySelector('.isettings').src='icons/settings-black.png'
+        document.querySelector('.iabout').src='icons/about-black.png'
+        document.querySelectorAll('.pupper-menu').forEach(v=>v.classList.add('pupper-menu-light'))
+        document.querySelectorAll('.bupper-menu').forEach(v=>v.classList.add('bupper-menu-light'))
+        document.querySelectorAll('.bupper-button').forEach(v=>v.classList.add('bupper-button-light'))
     }
     CollapseDesiner()
 }
