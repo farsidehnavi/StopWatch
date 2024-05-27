@@ -11,9 +11,16 @@ function AddSecondDigit(inp){
     }
 }
 // Errors :
-if (JSON.parse(localStorage.getItem('sett')).s){
+if (JSON.parse(localStorage.getItem('sett'))){
+    if (JSON.parse(localStorage.getItem('sett')).s){
+        if (localStorage.getItem('time')){
+        document.querySelector('.ptimer').innerHTML=localStorage.getItem('time')
+        }
+    }
+}
+else{
     if (localStorage.getItem('time')){
-    document.querySelector('.ptimer').innerHTML=localStorage.getItem('time')
+        document.querySelector('.ptimer').innerHTML=localStorage.getItem('time')
     }
 }
 function AddbyOne(itm){
