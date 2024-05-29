@@ -1,17 +1,15 @@
 Desiner()
 OnclickStartup()
-// import { StorageRestore } from "./stopwatch-functions-backend.js"
-// StorageRestore()
 // NightMode()
 // setTimeout(()=>{NightMode()},1000)
 function OnclickStartup(){
-    document.querySelector('.bfirst').addEventListener('click',()=>{Power()})
-    document.querySelector('.bsecond').addEventListener('click',()=>{MarkCaller()})
-    document.querySelector('.bthird').addEventListener('click',()=>{ResetCaller()})
-    document.querySelector('.bmode').addEventListener('click',()=>{NightMode()})
-    document.querySelector('.bexpand').addEventListener('click',()=>{Expand()})
-    document.querySelector('.bsettings').addEventListener('click',()=>{OpenSettings()})
-    document.querySelector('body').onresize=()=>{Desiner()}
+    document.querySelector('.bfirst').addEventListener('click',()=>Power())
+    document.querySelector('.bsecond').addEventListener('click',()=>MarkCaller())
+    document.querySelector('.bthird').addEventListener('click',()=>ResetCaller())
+    document.querySelector('.bmode').addEventListener('click',()=>NightMode())
+    document.querySelector('.bexpand').addEventListener('click',()=>Expand())
+    document.querySelector('.bsettings').addEventListener('click',()=>OpenSettings())
+    document.body.onresize=()=>Desiner()
 }
 function OpenSettings(){
     window.open('settings.html','','width=340, height=225')
@@ -193,7 +191,9 @@ function isFastestReset(){
 function isFastestCaller(o){
     document.querySelector('.isFastest'+isFastest(o)).innerText=o
 }
+// import { WindowIDReturner } from "./index.js"
 function Desiner(){
+    // console.log(WindowIDReturner())//.resizeTo(377,450)
     // if(document.querySelector('body').clientWidth<330){
     //     window.open('stopwatch-under360px.html')
     // //     h=document.querySelector('.hour').innerText

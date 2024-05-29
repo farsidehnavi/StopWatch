@@ -7,6 +7,12 @@ function TimeReloade(){
     document.querySelector('.second').innerText=a[2]
 }
 document.querySelector('button').addEventListener('click',()=>{OpenStopWatch()})
+let b
 function OpenStopWatch(){
-    window.open('stopwatch.html','','width=377, height=450')
+    b=window.open('stopwatch.html','','width=377, height=450')
+    console.log(b)
+    b.onresize=()=>b.resizeTo(377,450)
 }
+// export function WindowIDReturner(){
+//     return b
+// }

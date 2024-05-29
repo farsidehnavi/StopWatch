@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    cursor: default;
 }
 .background-img {
     height: 99.1vh;
@@ -81,5 +82,35 @@ button {
 @media only screen and (max-width:250px) {
     .sp {
         opacity: 0;
+    }
+}
+@media only screen and (max-width:600px) and (min-width:250px) {
+    .fp {
+        font-size: 8vw;
+        left: 11.5vw;
+    }
+    .sd,.td {
+        grid-template-columns: 30vw;
+        grid-template-rows: 20vh 20vh 20vh;
+        top: 15vh;
+        left: 35vw;
+    }
+    .sd {
+        font-size: 3vw;
+    }
+    .td {
+        font-size: 12vw;
+    }
+    .pointer,button {
+        font-size: 5vw;
+    }
+    .pointer {
+        top: 75vh;
+        left: 21vw;
+    }
+    button {
+        top: 85vh;
+        left: 37.5vw;
+        width: 25vw;
     }
 }
