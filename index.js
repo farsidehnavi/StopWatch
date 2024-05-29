@@ -8,6 +8,7 @@ function TimeReloade(){
 }
 document.querySelector('button').addEventListener('click',()=>{OpenStopWatch()})
 window.onresize=()=>MobileView()
+MobileView()
 let isMobileView
 function MobileView(){
     if(window.innerWidth<window.innerHeight){
