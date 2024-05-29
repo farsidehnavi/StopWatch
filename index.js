@@ -7,12 +7,28 @@ function TimeReloade(){
     document.querySelector('.second').innerText=a[2]
 }
 document.querySelector('button').addEventListener('click',()=>{OpenStopWatch()})
-let b
-function OpenStopWatch(){
-    b=window.open('stopwatch.html','','width=377, height=450')
-    console.log(b)
-    b.onresize=()=>b.resizeTo(377,450)
+window.onresize=()=>MobileView()
+let isMobileView
+function MobileView(){
+    if(window.innerWidth<window.innerHeight){
+        if(!isMobileView){
+            MobileViewOn()
+        }
+    }
+    else {
+        if(isMobileView){
+            MobileViewOff()
+        }
+    }
 }
-// export function WindowIDReturner(){
-//     return b
-// }
+function MobileViewOn(){
+    document.querySelector('.stylesheet').innerHTML='<link rel="stylesheet" href="index-mobileView.css">'
+    isMobileView=true
+}
+function MobileViewOff(){
+    document.querySelector('.stylesheet').innerHTML=''
+    isMobileView=false
+}
+function OpenStopWatch(){
+    window.open('stopwatch.html','','width=377, height=450')
+}
