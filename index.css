@@ -10,6 +10,7 @@ body {
     object-fit: cover;
     z-index: -1;
     filter: blur(6px);
+    position: fixed;
 }
 .fp {
     font-family: "Dancing Script", cursive;
