@@ -8,8 +8,8 @@ function TimeReloade(){
 }
 document.querySelector('button').addEventListener('click',()=>{OpenStopWatch()})
 window.onresize=()=>MobileView()
+let isMobileView=false
 MobileView()
-let isMobileView
 function MobileView(){
     if(window.innerWidth<window.innerHeight){
         if(!isMobileView){
@@ -27,6 +27,7 @@ function MobileViewOn(){
     alert('outerheight'+window.outerHeight+'outerwidth'+window.outerWidth)
     document.querySelector('.stylesheet').innerHTML='<link rel="stylesheet" href="index-mobileView.css">'
     isMobileView=true
+    console.log('done')
 }
 function MobileViewOff(){
     document.querySelector('.stylesheet').innerHTML=''
