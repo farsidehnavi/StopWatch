@@ -108,14 +108,14 @@ button:active {
     .sd,.td {
         grid-template-columns: 30vw;
         grid-template-rows: 20vh 20vh 20vh;
-        top: 15vh;
+        top: 14vh;
         left: 35vw;
     }
     .sd {
-        font-size: 3vw;
+        font-size: 4.5vw;
     }
     .td {
-        font-size: 12vw;
+        font-size: 18vw;
     }
     .pointer,button {
         font-size: 5vw;
