@@ -23,6 +23,8 @@ function MobileView(){
     }
 }
 function MobileViewOn(){
+    alert('height'+window.innerHeight+'width'+window.innerWidth)
+    alert('outerheight'+window.outerHeight+'outerwidth'+window.outerWidth)
     document.querySelector('.stylesheet').innerHTML='<link rel="stylesheet" href="index-mobileView.css">'
     isMobileView=true
 }
