@@ -7,7 +7,7 @@ function TimeReloade(){
     document.querySelector('.second').innerText=a[2]
 }
 document.querySelector('button').addEventListener('click',()=>{OpenStopWatch()})
-window.onresize=()=>MobileView()
+window.onresize=()=>MobileView();BackgroundImgResizer()
 let isMobileView=false
 MobileView()
 function MobileView(){
@@ -23,8 +23,6 @@ function MobileView(){
     }
 }
 function MobileViewOn(){
-    alert('height'+window.innerHeight+'width'+window.innerWidth)
-    alert('outerheight'+window.outerHeight+'outerwidth'+window.outerWidth)
     document.querySelector('.stylesheet').innerHTML='<link rel="stylesheet" href="index-mobileView.css">'
     isMobileView=true
     console.log('done')
@@ -32,6 +30,9 @@ function MobileViewOn(){
 function MobileViewOff(){
     document.querySelector('.stylesheet').innerHTML=''
     isMobileView=false
+}
+function BackgroundImgResizer(){
+    // document.querySelector('.background-img').style.height=String(window.innerHeight)+'px'
 }
 function OpenStopWatch(){
     window.open('stopwatch.html','','width=377, height=450')

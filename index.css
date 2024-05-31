@@ -5,6 +5,8 @@ body {
 .background-img {
     height: 99.1vh;
     width: 99.6vw;
+    /* height: 100vh;
+    width: 100vw; */
     object-fit: cover;
     z-index: -1;
     filter: blur(6px);
@@ -78,6 +80,19 @@ button {
     font-size: 2vw;
     border-radius: 8px;
     cursor: pointer;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    /* animation: button-move 1s infinite; */
+}
+/* @keyframes button-move {
+    50% {
+        box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.3);
+    }
+} */
+button:hover {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+button:active {
+    box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 @media only screen and (max-width:250px) {
     .sp {
