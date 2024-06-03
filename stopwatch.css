@@ -82,11 +82,12 @@ body {
 .bthird {
     background-color: rgb(50, 50, 50, 0);
     border-radius: 100px;
-    border: solid 2px gray;
-    padding: 0 15px;
+    /* border: solid 2px gray; */
+    border: solid 0.522vw gray;
     opacity: 0.5;
     cursor: pointer;
-    width: 52.81px;
+    /* width: 52.81px; */
+    width: 13.7885vw;
 }
 .dundertext {
     display: grid;
