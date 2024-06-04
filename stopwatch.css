@@ -78,6 +78,7 @@ body {
     cursor: pointer;
     /* margin-right: 20px; */
     margin-right: 5.51vw;
+    transition: opacity 0.5s;
 }
 .bthird {
     background-color: rgb(50, 50, 50, 0);
@@ -88,6 +89,7 @@ body {
     cursor: pointer;
     /* width: 52.81px; */
     width: 13.7885vw;
+    transition: opacity 0.5s;
 }
 .dundertext {
     display: grid;

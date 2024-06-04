@@ -35,5 +35,5 @@ function BackgroundImgResizer(){
     // document.querySelector('.background-img').style.height=String(window.innerHeight)+'px'
 }
 function OpenStopWatch(){
-    window.open('stopwatch.html','','width=377, height=450')
+    window.open('stopwatch.html','','width=377, height=462')
 }

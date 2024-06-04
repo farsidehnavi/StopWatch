@@ -1,5 +1,6 @@
 Desiner()
 OnclickStartup()
+WindowResizer(false)
 // NightMode()
 // setTimeout(()=>{NightMode()},1000)
 function OnclickStartup(){
@@ -13,6 +14,14 @@ function OnclickStartup(){
 }
 function OpenSettings(){
     window.open('settings.html','','width=340, height=225')
+}
+function WindowResizer(situation){
+    if(situation){
+        window.resizeTo(395,626)
+    }
+    else {
+        window.resizeTo(395,543)
+    }
 }
 function NightMode(){
     if(document.querySelector('.bmode').title=='Night Mode'){
@@ -57,6 +66,7 @@ function Expand(){
         document.querySelector('.bexpand').title='Collapse'
         document.querySelector('.bsecond').classList.add('bsecond-hide')
         document.querySelector('.dbuttons').classList.add('dbuttons-expand')
+        WindowResizer(false)
         }
     else {
         document.querySelector('.dflaglist-toppic').classList.remove('dflaglist-toppic-hide')
@@ -65,6 +75,10 @@ function Expand(){
         document.querySelector('.bexpand').title='Expand'
         document.querySelector('.bsecond').classList.remove('bsecond-hide')
         document.querySelector('.dbuttons').classList.remove('dbuttons-expand')
+        console.log(q)
+        if(q>3){
+            WindowResizer(true)
+        }
     }
     CollapseDesiner()
 }
@@ -158,6 +172,7 @@ function ResetCaller(){
     }
     document.querySelector('.dflaglist-toppic').innerHTML=null
     q=0
+    WindowResizer(false)
     Reset()
 }
 import { Mark } from "./stopwatch-functions-backend.js"
@@ -167,6 +182,9 @@ function MarkCaller(){
     if(document.querySelector('.bfirst').title=='Pause'){
         if(q==0){
             document.querySelector('.dflaglist-toppic').innerHTML=`<p>Laps</p><p>Time</p><p>Total</p><hr class="hr">`
+        }
+        else if(q==3){
+            WindowResizer(true)
         }
         document.querySelector('.flag').innerHTML=`<div class="laps">
         <p class="count">${q+1}</p>
