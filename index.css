@@ -79,7 +79,7 @@ button {
     padding: 10px 20px;
     color: white;
     font-size: 2vw;
-    border-radius: 8px;
+    border-radius: 2vw;
     cursor: pointer;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
     /* animation: button-move 1s infinite; */
